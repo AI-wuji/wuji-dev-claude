@@ -68,7 +68,7 @@ Nuwa·Distillation  Impeccable·20 commands
 | 四 | 并行执行 / Parallelism | 龙虾军团调度 / Lobster Legion scheduling |
 | 五 | UI 设计 / UI Design | 9子系统 / 9 subsystems (anti-patterns, typesetting, color, spacing, motion…) |
 | 六 | 代码质量 / Code Quality | 简洁优先 · Edit胜Write / Brevity first, Edit over Write |
-| 七 | 安全体系 / Security | 四级权限 + 六条红线 / 4-tier perms + 6 red lines |
+| 七 | 安全体系 / Security | 四级权限 + 八条红线 / 4-tier perms + 8 red lines |
 | 八 | Token 效率 / Token Efficiency | Prompt Caching · compact · Plan Mode 省60%+ |
 | 九 | 协作原则 / Collaboration | 七条铁律 / 7 iron rules |
 | 十 | 社区精华 / Community | superpowers · planning-with-files · Matt Pocock |
@@ -114,7 +114,7 @@ Nuwa·Distillation  Impeccable·20 commands
 | 🟠 中等 / Medium | 安装依赖、git / Install, git | 确认后执行 / Confirm |
 | 🔴 高危 / High | 删除、force push、环境变量 / Delete, force push, env | **必须确认 / Must Confirm** |
 
-**铁律 / Iron Rules**: 不删备份 / No backup deletion · 不跳hook / No hook skip · 不force push main · 不硬编码密钥 / No hardcoded secrets
+**铁律 / Iron Rules**: 不删备份 / No backup deletion · 不跳hook / No hook skip · 不瞎编 / No fabrication · 不force push main · 不硬编码密钥 / No hardcoded secrets
 
 ---
 

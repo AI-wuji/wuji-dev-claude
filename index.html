@@ -98,6 +98,14 @@ section{padding:80px 24px}
 .pill-grid .pill{padding:8px 18px;border:1px solid var(--border);border-radius:100px;font-size:13px;color:var(--text-secondary);background:var(--bg-card)}
 
 /* Footer */
+/* Donation */
+.donate{text-align:center;padding:60px 24px 80px;background:var(--bg-elevated)}
+.donate-card{display:inline-block;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:36px 48px;transition:all .3s ease}
+.donate-card:hover{border-color:hsl(35 60% 30%);box-shadow:0 0 40px var(--accent-subtle)}
+.donate-card img{width:200px;height:200px;border-radius:12px;display:block;margin:0 auto 16px;border:2px solid var(--border)}
+.donate-card .qr-title{font-weight:700;font-size:16px;margin-bottom:4px}
+.donate-card .qr-sub{font-size:13px;color:var(--text-muted)}
+
 footer{border-top:1px solid var(--border);padding:40px 24px;text-align:center;color:var(--text-muted);font-size:13px}
 footer .accent{color:var(--accent)}
 
@@ -312,6 +320,19 @@ footer .accent{color:var(--accent)}
       <span class="pill">🔧 awesome-claude-code</span>
       <span class="pill">🛡️ 社区安全共识</span>
       <span class="pill">🖥️ ComfyUI专家 · 插件开发</span>
+    </div>
+  </div>
+</section>
+
+<!-- Donation -->
+<section class="donate">
+  <div class="section-inner">
+    <div class="section-label">赞赏 / Donate</div>
+    <h2 class="section-title" style="margin-bottom:32px">如果这个项目对你有帮助 / If this project helped you</h2>
+    <div class="donate-card">
+      <img src="赞赏码.jpg" alt="微信赞赏码 / WeChat Donation QR Code">
+      <div class="qr-title">微信赞赏码</div>
+      <div class="qr-sub">WeChat Donation QR Code</div>
     </div>
   </div>
 </section>

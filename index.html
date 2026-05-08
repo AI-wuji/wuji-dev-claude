@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>无极开发系统 · Claude Code Skill</title>
+<meta name="description" content="Claude Code 专属智能开发 Skill · 融合17源精华 · 静默联动 · 全程自主">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:hsl(240 5% 6%);--bg-elevated:hsl(240 5% 9%);--bg-card:hsl(240 4% 12%);
+  --border:hsl(240 4% 18%);--text-primary:hsl(240 8% 92%);--text-secondary:hsl(240 5% 62%);
+  --text-muted:hsl(240 4% 42%);--accent:hsl(35 90% 55%);--accent-dim:hsl(35 70% 42%);
+  --accent-subtle:hsl(35 60% 16%);--radius:10px;--radius-lg:16px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans SC',system-ui,sans-serif;background:var(--bg);color:var(--text-primary);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* Nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:hsl(240 5% 6% / 0.85);backdrop-filter:blur(16px) saturate(180%);border-bottom:1px solid var(--border);padding:0 24px;display:flex;align-items:center;height:52px;gap:28px}
+nav .logo{font-weight:700;font-size:16px;color:var(--accent);white-space:nowrap}
+nav a{font-size:13px;color:var(--text-secondary);text-decoration:none;transition:color 200ms ease}
+nav a:hover{color:var(--text-primary)}
+
+/* Hero */
+.hero{padding:140px 24px 100px;text-align:center;max-width:800px;margin:0 auto;position:relative}
+.hero::before{content:'';position:absolute;top:60px;left:50%;transform:translateX(-50%);width:500px;height:500px;background:radial-gradient(circle,hsl(35 80% 50% / 0.06) 0%,transparent 70%);pointer-events:none}
+.hero .badge{display:inline-block;padding:5px 16px;background:var(--accent-subtle);color:var(--accent);border-radius:100px;font-size:12px;font-weight:500;letter-spacing:0.06em;margin-bottom:28px}
+.hero h1{font-size:clamp(40px,6vw,64px);font-weight:700;line-height:1.15;letter-spacing:-0.02em;margin-bottom:16px}
+.hero h1 span{color:var(--accent)}
+.hero .tagline{font-size:18px;color:var(--text-secondary);max-width:540px;margin:0 auto 36px;line-height:1.7}
+.hero .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:32px}
+.hero .cta a{display:inline-flex;align-items:center;gap:6px;padding:10px 24px;border-radius:100px;font-size:14px;font-weight:500;text-decoration:none;transition:all 200ms ease}
+.hero .cta .primary{background:var(--accent);color:hsl(35 20% 8%)}
+.hero .cta .primary:hover{background:hsl(35 90% 60%);transform:translateY(-1px)}
+.hero .cta .secondary{border:1px solid var(--border);color:var(--text-secondary)}
+.hero .cta .secondary:hover{border-color:hsl(240 4% 30%);color:var(--text-primary)}
+.hero .pill-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.hero .pill{padding:6px 16px;border:1px solid var(--border);border-radius:100px;font-size:13px;color:var(--text-secondary);background:var(--bg-card);white-space:nowrap}
+
+/* Sections */
+section{padding:80px 24px}
+.section-inner{max-width:1040px;margin:0 auto}
+.section-label{font-size:12px;font-weight:500;letter-spacing:0.08em;color:var(--accent);text-transform:uppercase;margin-bottom:12px}
+.section-title{font-size:clamp(28px,3.5vw,36px);font-weight:700;line-height:1.25;letter-spacing:-0.01em;margin-bottom:16px}
+.section-desc{font-size:16px;color:var(--text-secondary);max-width:600px;margin-bottom:48px;line-height:1.7}
+
+/* Philosophy Grid */
+.phil-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+.phil-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center}
+.phil-card .phil-icon{font-size:32px;margin-bottom:12px}
+.phil-card h3{font-size:15px;font-weight:600;margin-bottom:6px}
+.phil-card p{font-size:13px;color:var(--text-secondary);line-height:1.6}
+
+/* Architecture */
+.arch{display:flex;flex-direction:column;align-items:center;gap:0;padding:40px 0}
+.arch-row{display:flex;align-items:center;gap:24px}
+.arch-node{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 28px;text-align:center;min-width:170px;transition:transform 200ms ease,box-shadow 200ms ease}
+.arch-node:hover{transform:translateY(-2px);box-shadow:0 8px 30px hsl(0 0% 0% / 0.4)}
+.arch-node.hub{border-color:var(--accent);box-shadow:0 0 40px var(--accent-subtle)}
+.arch-node .node-icon{font-size:28px;margin-bottom:8px}
+.arch-node .node-title{font-weight:600;font-size:15px;margin-bottom:4px}
+.arch-node .node-sub{font-size:12px;color:var(--text-muted)}
+.arch-connector{width:2px;height:32px;background:var(--border);position:relative}
+.arch-connector::after{content:'';position:absolute;bottom:-4px;left:-3px;border:4px solid transparent;border-top:6px solid var(--border)}
+.arch-horiz{display:flex;align-items:center;gap:0}
+.arch-horiz .arch-line{width:56px;height:2px;background:var(--border);position:relative}
+.arch-horiz .arch-line::after{content:'';position:absolute;right:-4px;top:-3px;border:4px solid transparent;border-left:6px solid var(--border)}
+
+/* Module Grid */
+.modules{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
+.module-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:border-color 200ms ease,transform 200ms ease}
+.module-card:hover{border-color:hsl(240 4% 24%);transform:translateY(-1px)}
+.module-card .mod-num{font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.06em;margin-bottom:10px}
+.module-card h3{font-size:16px;font-weight:600;margin-bottom:8px}
+.module-card p{font-size:13px;color:var(--text-secondary);line-height:1.65}
+
+/* Linkage Table */
+.linkage-table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
+.linkage-table th,.linkage-table td{padding:14px 20px;text-align:left;font-size:14px}
+.linkage-table th{background:var(--bg-card);font-weight:600;font-size:12px;letter-spacing:0.05em;color:var(--text-muted);text-transform:uppercase}
+.linkage-table td{border-top:1px solid var(--border)}
+.linkage-table tr:hover td{background:hsl(240 4% 14%)}
+.linkage-table .method{color:var(--accent);font-weight:500}
+
+/* Anti-pattern Table */
+.ap-table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
+.ap-table th,.ap-table td{padding:12px 20px;text-align:left;font-size:14px}
+.ap-table th{background:var(--bg-card);font-weight:600;font-size:12px;letter-spacing:0.05em;color:var(--text-muted);text-transform:uppercase}
+.ap-table td{border-top:1px solid var(--border)}
+.ap-table .bad{color:hsl(0 55% 58%);font-weight:500}
+.ap-table .good{color:hsl(150 50% 48%);font-weight:500}
+.ap-table tr:hover td{background:hsl(240 4% 14%)}
+
+/* Pill Grid */
+.pill-grid{display:flex;flex-wrap:wrap;gap:10px}
+.pill-grid .pill{padding:8px 18px;border:1px solid var(--border);border-radius:100px;font-size:13px;color:var(--text-secondary);background:var(--bg-card)}
+
+/* Footer */
+footer{border-top:1px solid var(--border);padding:40px 24px;text-align:center;color:var(--text-muted);font-size:13px}
+footer .accent{color:var(--accent)}
+
+/* Animations */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.animate{animation:fadeUp 700ms cubic-bezier(.4,0,.2,1) both}
+.animate-d1{animation-delay:100ms}.animate-d2{animation-delay:200ms}.animate-d3{animation-delay:300ms}.animate-d4{animation-delay:400ms}
+
+/* Mobile */
+@media(max-width:768px){
+  .hero{padding:100px 16px 60px}
+  .arch-row{flex-direction:column}.arch-horiz{flex-direction:column}
+  .arch-horiz .arch-line{width:2px;height:28px}
+  .arch-horiz .arch-line::after{right:auto;bottom:-4px;left:-3px;top:auto;border:4px solid transparent;border-top:6px solid var(--border)}
+  .modules{grid-template-columns:1fr}
+  .phil-grid{grid-template-columns:repeat(2,1fr)}
+  nav a{display:none}
+  .linkage-table,.ap-table{font-size:12px}
+  .linkage-table th,.linkage-table td,.ap-table th,.ap-table td{padding:10px 12px}
+}
+
+/* Print / reduced motion */
+@media(prefers-reduced-motion:reduce){.animate{animation:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">⚡ 无极开发系统</div>
+  <a href="#philosophy">理念</a>
+  <a href="#arch">架构</a>
+  <a href="#modules">模块</a>
+  <a href="#linkage">联动</a>
+  <a href="#ui">UI系统</a>
+  <a href="#sources">来源</a>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <div class="badge animate">Claude Code · v3.0 · 17源融合</div>
+  <h1 class="animate animate-d1">无极<span>开发</span>系统</h1>
+  <p class="tagline animate animate-d2">
+    专为 <strong>Claude Code</strong> 打造的智能开发 Skill<br>
+    初期对齐，全程自主。静默联动，无极无感。
+  </p>
+  <div class="cta animate animate-d3">
+    <a href="https://github.com/AI-wuji/wuji-dev-claude" class="primary">⭐ GitHub 仓库</a>
+    <a href="#arch" class="secondary">查看架构 ↓</a>
+  </div>
+  <div class="pill-row animate animate-d4">
+    <span class="pill">🦞 龙虾军团</span>
+    <span class="pill">🧠 女娲蒸馏</span>
+    <span class="pill">🎨 Impeccable</span>
+    <span class="pill">🖥️ frontend-design</span>
+    <span class="pill">🔒 安全红线</span>
+    <span class="pill">⚡ Token 优化</span>
+    <span class="pill">🌐 社区精华</span>
+  </div>
+</header>
+
+<!-- Philosophy -->
+<section id="philosophy" style="background:var(--bg-elevated)">
+  <div class="section-inner">
+    <div class="section-label">核心理念</div>
+    <h2 class="section-title">初期对齐，全程自主</h2>
+    <p class="section-desc">沟通集中在初期。一旦对齐，阿极独立跑到底——搜索→编码→测试→修复→打磨→交付。中间不打扰，最终交付完整成果。</p>
+    <div class="phil-grid">
+      <div class="phil-card animate"><div class="phil-icon">🎯</div><h3>初期对齐</h3><p>需求模糊时一次性问完，对齐后不再打扰</p></div>
+      <div class="phil-card animate animate-d1"><div class="phil-icon">🤫</div><h3>全程自主</h3><p>编码→测试→修复→打磨，独立跑到底</p></div>
+      <div class="phil-card animate animate-d2"><div class="phil-icon">🔗</div><h3>智能联动</h3><p>自动匹配 Impeccable/女娲 方法，无需手动切换</p></div>
+      <div class="phil-card animate animate-d3"><div class="phil-icon">🔇</div><h3>静默运行</h3><p>不宣布"加载XX skill"，无极无感</p></div>
+      <div class="phil-card animate animate-d4"><div class="phil-icon">📦</div><h3>完整交付</h3><p>交付的是完整可用成果，不是半成品</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Architecture -->
+<section id="arch">
+  <div class="section-inner">
+    <div class="section-label">架构</div>
+    <h2 class="section-title">三层技能生态</h2>
+    <p class="section-desc">CLAUDE.md 常驻基础规则，wuji-dev 做中枢路由，外部 skill 提供专项能力。一次触发，全链静默联动。</p>
+
+    <div class="arch">
+      <div class="arch-node animate" style="min-width:260px">
+        <div class="node-icon">📋</div>
+        <div class="node-title">CLAUDE.md</div>
+        <div class="node-sub">常驻规则 · 始终加载</div>
+        <div class="node-sub" style="margin-top:4px;color:var(--text-muted)">中文 · 备份保护 · 初期对齐 · Token效率</div>
+      </div>
+      <div class="arch-connector"></div>
+      <div class="arch-row">
+        <div class="arch-node animate animate-d1">
+          <div class="node-icon">🧠</div>
+          <div class="node-title">huashu-nuwa</div>
+          <div class="node-sub">女娲 · 思维蒸馏</div>
+        </div>
+        <div class="arch-horiz"><div class="arch-line"></div></div>
+        <div class="arch-node hub animate animate-d2">
+          <div class="node-icon">⚡</div>
+          <div class="node-title">wuji-dev</div>
+          <div class="node-sub">中枢路由 · 智能联动</div>
+          <div class="node-sub" style="margin-top:4px;color:var(--accent)">57个触发词 · 静默运行</div>
+        </div>
+        <div class="arch-horiz"><div class="arch-line"></div></div>
+        <div class="arch-node animate animate-d3">
+          <div class="node-icon">🎨</div>
+          <div class="node-title">impeccable</div>
+          <div class="node-sub">UI 审查 · 20个命令</div>
+        </div>
+      </div>
+      <div class="arch-connector" style="margin-top:24px"></div>
+      <div class="arch-node animate animate-d4" style="min-width:320px">
+        <div class="node-icon">🎯</div>
+        <div class="node-title">阿极 · 统一输出</div>
+        <div class="node-sub">无极只需要看结果，不需要感知 skill 边界</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modules -->
+<section id="modules" style="background:var(--bg-elevated)">
+  <div class="section-inner">
+    <div class="section-label">核心模块</div>
+    <h2 class="section-title">12 个模块 · 完整覆盖</h2>
+    <p class="section-desc">从需求分析到最终交付，从 UI 设计到安全红线，从 Token 优化到社区精华。一次性对齐，全程自主执行。</p>
+
+    <div class="modules">
+      <div class="module-card animate"><div class="mod-num">模块一</div><h3>开发工作流</h3><p>初期对齐→全程自主→交付完整成果。对齐后独立跑到底。</p></div>
+      <div class="module-card animate animate-d1"><div class="mod-num">模块二</div><h3>需求分析 · 多角度思维</h3><p>女娲四维分析法：用户×技术×全局×反模式视角。</p></div>
+      <div class="module-card animate animate-d2"><div class="mod-num">模块三</div><h3>搜索调研</h3><p>多路并行搜索。五维评估：功能×质量×活跃度×可融合性×协议。</p></div>
+      <div class="module-card animate animate-d3"><div class="mod-num">模块四</div><h3>并行执行</h3><p>龙虾军团调度。Explore + Agent 并行，完成后汇总验收。</p></div>
+      <div class="module-card animate"><div class="mod-num">模块五</div><h3>UI 设计系统</h3><p>9子系统：避坑×排版×色彩×间距×动效×交互×自检×可访问性×进阶。</p></div>
+      <div class="module-card animate animate-d1"><div class="mod-num">模块六</div><h3>代码质量规范</h3><p>简洁优先·命名即文档·不顺手重构·优先Edit改文件。</p></div>
+      <div class="module-card animate animate-d2"><div class="mod-num">模块七</div><h3>安全体系</h3><p>四级权限+六条红线。不删备份·不跳hook·不force push main。</p></div>
+      <div class="module-card animate animate-d3"><div class="mod-num">模块八</div><h3>Token 效率</h3><p>Prompt Caching·定期compact·Sonnet主力·Plan Mode省60%+。</p></div>
+      <div class="module-card animate"><div class="mod-num">模块九</div><h3>协作原则</h3><p>初期对齐→全程自主→遇到阻塞求助→不隐藏问题→交付完整。</p></div>
+      <div class="module-card animate animate-d1"><div class="mod-num">模块十</div><h3>社区精华</h3><p>superpowers·planning-with-files·Matt Pocock·小步快走。</p></div>
+      <div class="module-card animate animate-d2"><div class="mod-num">模块十一</div><h3>汇报格式</h3><p>按复杂度分级汇报。简单一句话，复杂有结构和决策记录。</p></div>
+      <div class="module-card animate animate-d3"><div class="mod-num">模块十二</div><h3>场景速查</h3><p>UI·ComfyUI·Bug修复·重构·选型·紧急·新项目。每场景有对策。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Linkage -->
+<section id="linkage">
+  <div class="section-inner">
+    <div class="section-label">智能联动</div>
+    <h2 class="section-title">你说需求，我自动匹配方法</h2>
+    <p class="section-desc">不需要手动切换 skill。无极只需要描述任务，阿极静默匹配最合适的工具链。</p>
+
+    <table class="linkage-table animate">
+      <thead><tr><th>任务场景</th><th>自动调用</th><th>能力体现</th></tr></thead>
+      <tbody>
+        <tr><td>日常开发（写代码/修bug）</td><td class="method">wuji-dev 本体</td><td>工作流 + 安全 + Token效率 + 代码规范</td></tr>
+        <tr><td>UI/视觉/交互设计</td><td class="method">+ Impeccable 方法</td><td>20命令（audit/critique/polish/distill/animate…）</td></tr>
+        <tr><td>人物思维/视角提炼</td><td class="method">+ 女娲蒸馏框架</td><td>六路并行采集 → 心智模型 → 表达DNA → 诚实边界</td></tr>
+        <tr><td>技术选型/架构决策</td><td class="method">+ 女娲多角度思维</td><td>四视角分析 + 决策辅助四步法</td></tr>
+        <tr><td>安全审查</td><td class="method">wuji-dev 安全体系</td><td>四级权限 + 六条红线 + 代码安全检查</td></tr>
+        <tr><td>搜索调研</td><td class="method">wuji-dev 搜索策略</td><td>多路并行 + 五维评估</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- UI System -->
+<section id="ui" style="background:var(--bg-elevated)">
+  <div class="section-inner">
+    <div class="section-label">UI 设计系统</div>
+    <h2 class="section-title">八大反模式 · 精准避坑</h2>
+    <p class="section-desc">融合 Impeccable 反模式库 + frontend-design 五大支柱。每一个"不要"背后都是大量踩坑经验。</p>
+
+    <table class="ap-table animate">
+      <thead><tr><th>🚫 反模式</th><th>✅ 正确做法</th></tr></thead>
+      <tbody>
+        <tr><td class="bad">AI 塑料渐变（紫橙/彩虹）</td><td class="good">HSL 调色板精确定义，有克制</td></tr>
+        <tr><td class="bad">默认字体（Inter/Roboto/Arial）</td><td class="good">Clash Display、Satoshi、Noto Sans SC</td></tr>
+        <tr><td class="bad">灰色地狱（灰底+灰字+灰卡片）</td><td class="good">中性色加色调倾向，拉开明度差</td></tr>
+        <tr><td class="bad">卡片套娃（卡片里嵌套卡片）</td><td class="good">间距、分割线、背景色差区分层级</td></tr>
+        <tr><td class="bad">纯黑纯白（#000 / #fff）</td><td class="good">暗色用 #0a0a0f 系，亮色用 #fafaf9 系</td></tr>
+        <tr><td class="bad">弹性缓动（bounce / elastic）</td><td class="good">cubic-bezier(0.4, 0, 0.2, 1) 平滑减速</td></tr>
+        <tr><td class="bad">图标+标题+文字网格</td><td class="good">不对称布局，交错图文关系</td></tr>
+        <tr><td class="bad">无层级阴影</td><td class="good">多层阴影叠加，模拟真实光影</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Sources -->
+<section id="sources">
+  <div class="section-inner">
+    <div class="section-label">融合来源</div>
+    <h2 class="section-title">17 个来源 · 取其精华</h2>
+    <p class="section-desc">从龙虾军团的安全调度，到女娲的思维蒸馏，再到社区的验证哲学。不是照搬，是融合。</p>
+
+    <div class="pill-grid animate">
+      <span class="pill">🦞 无极龙虾军团 · 安全调度</span>
+      <span class="pill">🧠 女娲.skill · 思维蒸馏</span>
+      <span class="pill">🎨 Impeccable · UI反模式+20命令</span>
+      <span class="pill">🖥️ frontend-design · 五大支柱</span>
+      <span class="pill">🎯 cc-design · 品牌设计系统</span>
+      <span class="pill">📐 web-design · 规范先行</span>
+      <span class="pill">🔬 algorithmic-art · 算法艺术</span>
+      <span class="pill">♿ web-design-guidelines · WCAG可访问性</span>
+      <span class="pill">⚡ DeepSeek Cache-First</span>
+      <span class="pill">💾 Claude Code Prompt Caching</span>
+      <span class="pill">🪶 caveman/token-efficient</span>
+      <span class="pill">⭐ superpowers (40.9K⭐)</span>
+      <span class="pill">📋 planning-with-files (13.4K⭐)</span>
+      <span class="pill">🎓 Matt Pocock Skills (23K⭐)</span>
+      <span class="pill">🔧 awesome-claude-code</span>
+      <span class="pill">🛡️ 社区安全共识</span>
+      <span class="pill">🖥️ ComfyUI专家 · 插件开发</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>由 <span class="accent">阿极</span> 为 <span class="accent">无极</span> 打造 · 2026 · 漫剧工业化生产系统</p>
+  <p style="margin-top:8px;font-size:12px">Claude Code 专属 · <a href="https://github.com/AI-wuji/wuji-dev-claude" style="color:var(--text-muted)">GitHub</a> · MIT License · 所有规则仅供参考，非强制</p>
+</footer>
+
+<script>
+const obs=new IntersectionObserver((e)=>{e.forEach(x=>{if(x.isIntersecting)x.target.style.animationPlayState='running'})},{threshold:0.1});
+document.querySelectorAll('.animate').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

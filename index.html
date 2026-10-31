@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>无极开发系统 · Claude Code Skill</title>
-<meta name="description" content="Claude Code 专属智能开发 Skill · 融合17源精华 · 静默联动 · 全程自主">
+<title>无极军团 5.0 · Claude 版</title>
+<meta name="description" content="阿极直带 21 个专家子代理 · 缺输入回交 · 失败先绕开 · 验证看产物">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -134,197 +134,96 @@ footer .accent{color:var(--accent)}
 <body>
 
 <nav>
-  <div class="logo">⚡ 无极开发系统</div>
-  <a href="#philosophy">理念</a>
-  <a href="#arch">架构</a>
-  <a href="#modules">模块</a>
-  <a href="#linkage">联动</a>
-  <a href="#ui">UI系统</a>
-  <a href="#sources">来源</a>
+  <div class="logo">☯️ 无极军团 5.0</div>
+  <a href="#install">安装</a>
+  <a href="#experts">专家</a>
+  <a href="#rules">规则</a>
+  <a href="#status">状态</a>
 </nav>
 
-<!-- Hero -->
 <header class="hero">
-  <div class="badge animate">Claude Code · v3.0 · 17源融合</div>
-  <h1 class="animate animate-d1">无极<span>开发</span>系统</h1>
-  <p class="tagline animate animate-d2">
-    专为 <strong>Claude Code</strong> 打造的智能开发 Skill<br>
-    初期对齐，全程自主。静默联动，无极无感。
-  </p>
+  <div class="badge animate">Claude Code · 5.0 · 21 个专家</div>
+  <h1 class="animate animate-d1">无极<span>军团</span></h1>
+  <p class="tagline animate animate-d2">阿极直带专家。一个主 Skill，加 21 个按需调用的专家子代理。</p>
   <div class="cta animate animate-d3">
-    <a href="https://github.com/AI-wuji/wuji-dev-claude" class="primary">⭐ GitHub 仓库</a>
-    <a href="#arch" class="secondary">查看架构 ↓</a>
+    <a class="primary" href="#install">安装</a>
+    <a class="secondary" href="https://github.com/AI-wuji/wuji-dev-claude">GitHub</a>
+    <a class="secondary" href="https://github.com/AI-wuji/wuji-dev-claude/blob/main/CHANGELOG.md">更新日志</a>
   </div>
   <div class="pill-row animate animate-d4">
-    <span class="pill">🦞 龙虾军团</span>
-    <span class="pill">🧠 女娲蒸馏</span>
-    <span class="pill">🎨 Impeccable</span>
-    <span class="pill">🖥️ frontend-design</span>
-    <span class="pill">🔒 安全红线</span>
-    <span class="pill">⚡ Token 优化</span>
-    <span class="pill">🌐 社区精华</span>
+    <span class="pill">缺输入就回交</span>
+    <span class="pill">失败先绕开</span>
+    <span class="pill">验证看产物</span>
+    <span class="pill">不删用户文件</span>
   </div>
 </header>
 
-<!-- Philosophy -->
-<section id="philosophy" style="background:var(--bg-elevated)">
+<section id="install" style="background:var(--bg-elevated)">
   <div class="section-inner">
-    <div class="section-label">核心理念</div>
-    <h2 class="section-title">初期对齐，全程自主</h2>
-    <p class="section-desc">沟通集中在初期。一旦对齐，阿极独立跑到底——搜索→编码→测试→修复→打磨→交付。中间不打扰，最终交付完整成果。</p>
-    <div class="phil-grid">
-      <div class="phil-card animate"><div class="phil-icon">🎯</div><h3>初期对齐</h3><p>需求模糊时一次性问完，对齐后不再打扰</p></div>
-      <div class="phil-card animate animate-d1"><div class="phil-icon">🤫</div><h3>全程自主</h3><p>编码→测试→修复→打磨，独立跑到底</p></div>
-      <div class="phil-card animate animate-d2"><div class="phil-icon">🔗</div><h3>智能联动</h3><p>自动匹配 Impeccable/女娲 方法，无需手动切换</p></div>
-      <div class="phil-card animate animate-d3"><div class="phil-icon">🔇</div><h3>静默运行</h3><p>不宣布"加载XX skill"，无极无感</p></div>
-      <div class="phil-card animate animate-d4"><div class="phil-icon">📦</div><h3>完整交付</h3><p>交付的是完整可用成果，不是半成品</p></div>
-    </div>
+    <div class="section-label">安装 / Install</div>
+    <h2 class="section-title">两条命令</h2>
+    <p class="section-desc">装完重启 Claude Code，专家以 <code>wuji-legion:wuji-*</code> 的名字出现。</p>
+    <pre style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;font-size:14px;overflow-x:auto;color:var(--text-primary)">/plugin marketplace add AI-wuji/wuji-dev-claude
+/plugin install wuji-legion@wuji-dev-claude</pre>
+    <p class="section-desc" style="margin-top:20px;margin-bottom:0">守卫钩子是可选的，用来拦截批量删除等越界操作，配置示例见仓库的 <code>.claude/settings.example.json</code>。</p>
   </div>
 </section>
 
-<!-- Architecture -->
-<section id="arch">
+<section id="experts">
   <div class="section-inner">
-    <div class="section-label">架构</div>
-    <h2 class="section-title">三层技能生态</h2>
-    <p class="section-desc">CLAUDE.md 常驻基础规则，wuji-dev 做中枢路由，外部 skill 提供专项能力。一次触发，全链静默联动。</p>
-
-    <div class="arch">
-      <div class="arch-node animate" style="min-width:260px">
-        <div class="node-icon">📋</div>
-        <div class="node-title">CLAUDE.md</div>
-        <div class="node-sub">常驻规则 · 始终加载</div>
-        <div class="node-sub" style="margin-top:4px;color:var(--text-muted)">中文 · 备份保护 · 初期对齐 · Token效率</div>
-      </div>
-      <div class="arch-connector"></div>
-      <div class="arch-row">
-        <div class="arch-node animate animate-d1">
-          <div class="node-icon">🧠</div>
-          <div class="node-title">huashu-nuwa</div>
-          <div class="node-sub">女娲 · 思维蒸馏</div>
-        </div>
-        <div class="arch-horiz"><div class="arch-line"></div></div>
-        <div class="arch-node hub animate animate-d2">
-          <div class="node-icon">⚡</div>
-          <div class="node-title">wuji-dev</div>
-          <div class="node-sub">中枢路由 · 智能联动</div>
-          <div class="node-sub" style="margin-top:4px;color:var(--accent)">57个触发词 · 静默运行</div>
-        </div>
-        <div class="arch-horiz"><div class="arch-line"></div></div>
-        <div class="arch-node animate animate-d3">
-          <div class="node-icon">🎨</div>
-          <div class="node-title">impeccable</div>
-          <div class="node-sub">UI 审查 · 20个命令</div>
-        </div>
-      </div>
-      <div class="arch-connector" style="margin-top:24px"></div>
-      <div class="arch-node animate animate-d4" style="min-width:320px">
-        <div class="node-icon">🎯</div>
-        <div class="node-title">阿极 · 统一输出</div>
-        <div class="node-sub">无极只需要看结果，不需要感知 skill 边界</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Modules -->
-<section id="modules" style="background:var(--bg-elevated)">
-  <div class="section-inner">
-    <div class="section-label">核心模块</div>
-    <h2 class="section-title">12 个模块 · 完整覆盖</h2>
-    <p class="section-desc">从需求分析到最终交付，从 UI 设计到安全红线，从 Token 优化到社区精华。一次性对齐，全程自主执行。</p>
-
+    <div class="section-label">专家 / Experts</div>
+    <h2 class="section-title">21 个专家，按需调用</h2>
+    <p class="section-desc">默认冷态，用到才调，做完释放。同一专家可按互不重叠的范围开多个分身并发。</p>
     <div class="modules">
-      <div class="module-card animate"><div class="mod-num">模块一</div><h3>开发工作流</h3><p>初期对齐→全程自主→交付完整成果。对齐后独立跑到底。</p></div>
-      <div class="module-card animate animate-d1"><div class="mod-num">模块二</div><h3>需求分析 · 多角度思维</h3><p>女娲四维分析法：用户×技术×全局×反模式视角。</p></div>
-      <div class="module-card animate animate-d2"><div class="mod-num">模块三</div><h3>搜索调研</h3><p>多路并行搜索。五维评估：功能×质量×活跃度×可融合性×协议。</p></div>
-      <div class="module-card animate animate-d3"><div class="mod-num">模块四</div><h3>并行执行</h3><p>龙虾军团调度。Explore + Agent 并行，完成后汇总验收。</p></div>
-      <div class="module-card animate"><div class="mod-num">模块五</div><h3>UI 设计系统</h3><p>9子系统：避坑×排版×色彩×间距×动效×交互×自检×可访问性×进阶。</p></div>
-      <div class="module-card animate animate-d1"><div class="mod-num">模块六</div><h3>代码质量规范</h3><p>简洁优先·命名即文档·不顺手重构·优先Edit改文件。</p></div>
-      <div class="module-card animate animate-d2"><div class="mod-num">模块七</div><h3>安全体系</h3><p>四级权限+六条红线。不删备份·不跳hook·不force push main。</p></div>
-      <div class="module-card animate animate-d3"><div class="mod-num">模块八</div><h3>Token 效率</h3><p>Prompt Caching·定期compact·Sonnet主力·Plan Mode省60%+。</p></div>
-      <div class="module-card animate"><div class="mod-num">模块九</div><h3>协作原则</h3><p>初期对齐→全程自主→遇到阻塞求助→不隐藏问题→交付完整。</p></div>
-      <div class="module-card animate animate-d1"><div class="mod-num">模块十</div><h3>社区精华</h3><p>superpowers·planning-with-files·Matt Pocock·小步快走。</p></div>
-      <div class="module-card animate animate-d2"><div class="mod-num">模块十一</div><h3>汇报格式</h3><p>按复杂度分级汇报。简单一句话，复杂有结构和决策记录。</p></div>
-      <div class="module-card animate animate-d3"><div class="mod-num">模块十二</div><h3>场景速查</h3><p>UI·ComfyUI·Bug修复·重构·选型·紧急·新项目。每场景有对策。</p></div>
+      <div class="module-card"><div class="mod-num">工程</div><h3>代码探查</h3><p>只读梳理功能怎么运作：入口、调用链、数据流，结论带行号。</p></div>
+      <div class="module-card"><div class="mod-num">工程</div><h3>软件架构</h3><p>读现有模式，给唯一方案、实现地图和构建顺序。</p></div>
+      <div class="module-card"><div class="mod-num">工程</div><h3>工程实现</h3><p>在限定文件范围内实现、修复、重构。</p></div>
+      <div class="module-card"><div class="mod-num">工程</div><h3>代码审阅</h3><p>只读审阅，找正确性、安全、边界和回归风险。</p></div>
+      <div class="module-card"><div class="mod-num">工程</div><h3>测试验证</h3><p>补测试、固定行为、按验收标准逐条验收。</p></div>
+      <div class="module-card"><div class="mod-num">工程</div><h3>故障诊断</h3><p>只读定位根因，回交证据链和建议修复点。</p></div>
+      <div class="module-card"><div class="mod-num">工程</div><h3>逆向分析</h3><p>对已授权目标做只读静态分析，不运行目标程序。</p></div>
+      <div class="module-card"><div class="mod-num">工程</div><h3>前端视觉</h3><p>在限定范围内实现或改造界面，审查视觉问题。</p></div>
+      <div class="module-card"><div class="mod-num">工程</div><h3>技能打包</h3><p>把流程整理成 Skill 或插件，写触发描述并校验。</p></div>
+      <div class="module-card"><div class="mod-num">工程</div><h3>自动化设计</h3><p>设计并实现本地脚本和小型工作流，定时与常驻交用户批准。</p></div>
+      <div class="module-card"><div class="mod-num">创作</div><h3>ComfyUI 工作流</h3><p>设计调试工作流，写 Python 自定义节点，不擅自下载安装。</p></div>
+      <div class="module-card"><div class="mod-num">创作</div><h3>影视策划</h3><p>剧本、分镜表、美术方案、制作排期，只产出文本。</p></div>
+      <div class="module-card"><div class="mod-num">创作</div><h3>视听制作</h3><p>用本机命令行工具处理音视频，做成片质量检查。</p></div>
+      <div class="module-card"><div class="mod-num">创作</div><h3>内容写作</h3><p>文章、文案、选题、多平台改写，事实带来源。</p></div>
+      <div class="module-card"><div class="mod-num">商务与知识</div><h3>商务与合同</h3><p>方案、报价、合同风险标注。不是法律意见。</p></div>
+      <div class="module-card"><div class="mod-num">商务与知识</div><h3>文档</h3><p>解析、创建、编辑 Word、PDF、表格、演示。</p></div>
+      <div class="module-card"><div class="mod-num">商务与知识</div><h3>数据分析</h3><p>分析数据，结论带样本量和方法。</p></div>
+      <div class="module-card"><div class="mod-num">商务与知识</div><h3>研究</h3><p>在指定来源范围内调研，回交来源、反证和缺口。</p></div>
+      <div class="module-card"><div class="mod-num">商务与知识</div><h3>知识库问答</h3><p>只依据指定资料回答，每条带出处，没有就明说没有。</p></div>
+      <div class="module-card"><div class="mod-num">商务与知识</div><h3>学习与课程</h3><p>学习路径、课程大纲、练习，可当陪练。</p></div>
+      <div class="module-card"><div class="mod-num">商务与知识</div><h3>文件整理</h3><p>先出映射表再整理，绝不删除。</p></div>
     </div>
   </div>
 </section>
 
-<!-- Linkage -->
-<section id="linkage">
+<section id="rules" style="background:var(--bg-elevated)">
   <div class="section-inner">
-    <div class="section-label">智能联动</div>
-    <h2 class="section-title">你说需求，我自动匹配方法</h2>
-    <p class="section-desc">不需要手动切换 skill。无极只需要描述任务，阿极静默匹配最合适的工具链。</p>
-
-    <table class="linkage-table animate">
-      <thead><tr><th>任务场景</th><th>自动调用</th><th>能力体现</th></tr></thead>
-      <tbody>
-        <tr><td>日常开发（写代码/修bug）</td><td class="method">wuji-dev 本体</td><td>工作流 + 安全 + Token效率 + 代码规范</td></tr>
-        <tr><td>UI/视觉/交互设计</td><td class="method">+ Impeccable 方法</td><td>20命令（audit/critique/polish/distill/animate…）</td></tr>
-        <tr><td>人物思维/视角提炼</td><td class="method">+ 女娲蒸馏框架</td><td>六路并行采集 → 心智模型 → 表达DNA → 诚实边界</td></tr>
-        <tr><td>技术选型/架构决策</td><td class="method">+ 女娲多角度思维</td><td>四视角分析 + 决策辅助四步法</td></tr>
-        <tr><td>安全审查</td><td class="method">wuji-dev 安全体系</td><td>四级权限 + 六条红线 + 代码安全检查</td></tr>
-        <tr><td>搜索调研</td><td class="method">wuji-dev 搜索策略</td><td>多路并行 + 五维评估</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<!-- UI System -->
-<section id="ui" style="background:var(--bg-elevated)">
-  <div class="section-inner">
-    <div class="section-label">UI 设计系统</div>
-    <h2 class="section-title">八大反模式 · 精准避坑</h2>
-    <p class="section-desc">融合 Impeccable 反模式库 + frontend-design 五大支柱。每一个"不要"背后都是大量踩坑经验。</p>
-
-    <table class="ap-table animate">
-      <thead><tr><th>🚫 反模式</th><th>✅ 正确做法</th></tr></thead>
-      <tbody>
-        <tr><td class="bad">AI 塑料渐变（紫橙/彩虹）</td><td class="good">HSL 调色板精确定义，有克制</td></tr>
-        <tr><td class="bad">默认字体（Inter/Roboto/Arial）</td><td class="good">Clash Display、Satoshi、Noto Sans SC</td></tr>
-        <tr><td class="bad">灰色地狱（灰底+灰字+灰卡片）</td><td class="good">中性色加色调倾向，拉开明度差</td></tr>
-        <tr><td class="bad">卡片套娃（卡片里嵌套卡片）</td><td class="good">间距、分割线、背景色差区分层级</td></tr>
-        <tr><td class="bad">纯黑纯白（#000 / #fff）</td><td class="good">暗色用 #0a0a0f 系，亮色用 #fafaf9 系</td></tr>
-        <tr><td class="bad">弹性缓动（bounce / elastic）</td><td class="good">cubic-bezier(0.4, 0, 0.2, 1) 平滑减速</td></tr>
-        <tr><td class="bad">图标+标题+文字网格</td><td class="good">不对称布局，交错图文关系</td></tr>
-        <tr><td class="bad">无层级阴影</td><td class="good">多层阴影叠加，模拟真实光影</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<!-- Sources -->
-<section id="sources">
-  <div class="section-inner">
-    <div class="section-label">融合来源</div>
-    <h2 class="section-title">17 个来源 · 取其精华</h2>
-    <p class="section-desc">从龙虾军团的安全调度，到女娲的思维蒸馏，再到社区的验证哲学。不是照搬，是融合。</p>
-
-    <div class="pill-grid animate">
-      <span class="pill">🦞 无极龙虾军团 · 安全调度</span>
-      <span class="pill">🧠 女娲.skill · 思维蒸馏</span>
-      <span class="pill">🎨 Impeccable · UI反模式+20命令</span>
-      <span class="pill">🖥️ frontend-design · 五大支柱</span>
-      <span class="pill">🎯 cc-design · 品牌设计系统</span>
-      <span class="pill">📐 web-design · 规范先行</span>
-      <span class="pill">🔬 algorithmic-art · 算法艺术</span>
-      <span class="pill">♿ web-design-guidelines · WCAG可访问性</span>
-      <span class="pill">⚡ DeepSeek Cache-First</span>
-      <span class="pill">💾 Claude Code Prompt Caching</span>
-      <span class="pill">🪶 caveman/token-efficient</span>
-      <span class="pill">⭐ superpowers (40.9K⭐)</span>
-      <span class="pill">📋 planning-with-files (13.4K⭐)</span>
-      <span class="pill">🎓 Matt Pocock Skills (23K⭐)</span>
-      <span class="pill">🔧 awesome-claude-code</span>
-      <span class="pill">🛡️ 社区安全共识</span>
-      <span class="pill">🖥️ ComfyUI专家 · 插件开发</span>
+    <div class="section-label">规则 / Rules</div>
+    <h2 class="section-title">每个专家都守同一套规矩</h2>
+    <p class="section-desc">这些写在每个专家的定义里，不靠自觉。硬边界另由守卫钩子强制。</p>
+    <div class="phil-grid">
+      <div class="phil-card"><div class="phil-icon">🚧</div><h3>缺输入就回交</h3><p>输入契约缺项，回交 BLOCKED 并列出缺什么，不猜。</p></div>
+      <div class="phil-card"><div class="phil-icon">🔁</div><h3>失败先绕开</h3><p>换工具、换写法；仍失败查根因；修不了才停。同一方式最多重试两次。</p></div>
+      <div class="phil-card"><div class="phil-icon">🔍</div><h3>验证看产物</h3><p>不采信分身自述。作者不验自己。</p></div>
+      <div class="phil-card"><div class="phil-icon">🛡️</div><h3>权限边界</h3><p>不付费、不外发私有资料、不删除用户文件、不强杀进程、不写全局配置。</p></div>
+      <div class="phil-card"><div class="phil-icon">⚡</div><h3>最短任务链</h3><p>能直办就直办，只需一个专家就调一个，有独立分支才并发。</p></div>
     </div>
   </div>
 </section>
 
-<!-- Donation -->
+<section id="status">
+  <div class="section-inner">
+    <div class="section-label">状态 / Status</div>
+    <h2 class="section-title">做到了什么，没做到什么</h2>
+    <p class="section-desc">21 个专家只验证过"缺输入时回交 BLOCKED"。干活的质量没有系统实测，补进去的方法要点也没有实测效果。</p>
+    <p class="section-desc" style="margin-bottom:0">方法要点来自官方和开源项目的读后蒸馏。来源、读到的程度和许可记在仓库的 <code>expert-sources.md</code>。部分方向没找到可靠来源，已在更新日志里列出，没有硬补。</p>
+  </div>
+</section>
+
 <section class="donate">
   <div class="section-inner">
     <div class="section-label">赞赏 / Donate</div>
@@ -338,8 +237,8 @@ footer .accent{color:var(--accent)}
 </section>
 
 <footer>
-  <p>由 <span class="accent">阿极</span> 为 <span class="accent">无极</span> 打造 · 2026 · 漫剧工业化生产系统</p>
-  <p style="margin-top:8px;font-size:12px">Claude Code 专属 · <a href="https://github.com/AI-wuji/wuji-dev-claude" style="color:var(--text-muted)">GitHub</a> · MIT License · 所有规则仅供参考，非强制</p>
+  <p>由 <span class="accent">阿极</span> 为 <span class="accent">无极</span> 打造 · 2026</p>
+  <p style="margin-top:8px;font-size:12px">Claude Code 专属 · <a href="https://github.com/AI-wuji/wuji-dev-claude" style="color:var(--text-muted)">GitHub</a> · <a href="https://github.com/AI-wuji/wuji-dev-claude/blob/main/CHANGELOG.md" style="color:var(--text-muted)">更新日志</a> · 沿用旧版的 MIT 声明</p>
 </footer>
 
 <script>

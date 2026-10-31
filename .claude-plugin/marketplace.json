@@ -1,0 +1,12 @@
+{
+  "name": "wuji-dev-claude",
+  "description": "无极军团 5.0（Claude 版）的插件市场：阿极直带 21 个专家子代理，缺输入回交、失败先绕开、验证看产物。",
+  "owner": { "name": "AI-wuji" },
+  "plugins": [
+    {
+      "name": "wuji-legion",
+      "description": "无极军团 5.0（Claude 版）：阿极直带 21 个专家子代理，冷态按需调用，可并发。",
+      "source": "./plugin/wuji-legion"
+    }
+  ]
+}

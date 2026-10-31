@@ -1,0 +1,48 @@
+{
+  "language": "chinese",
+  "permissions": {
+    "deny": [
+      "Bash(shutdown *)",
+      "Bash(reboot *)",
+      "PowerShell(Stop-Computer *)",
+      "PowerShell(Restart-Computer *)",
+      "PowerShell(shutdown *)",
+      "Bash(rm -rf *)",
+      "Bash(rm -r *)",
+      "PowerShell(Remove-Item *-Recurse*)",
+      "Edit(~/.claude/settings*.json)",
+      "Edit(~/.claude/.credentials.json)",
+      "Edit(~/.claude/CLAUDE.md)",
+      "Edit(~/.claude/plugins/**)",
+      "Edit(~/.claude/skills/**)",
+      "Edit(~/.claude/agents/**)",
+      "Edit(~/.claude/commands/**)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|PowerShell",
+        "hooks": [
+          { "type": "command", "command": "node \"<本仓库的绝对路径>/scripts/guard.js\"", "timeout": 5 }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "matcher": "Bash|PowerShell",
+        "hooks": [
+          { "type": "command", "command": "node \"<本仓库的绝对路径>/scripts/failtrack.js\"", "timeout": 5 }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Bash|PowerShell",
+        "hooks": [
+          { "type": "command", "command": "node \"<本仓库的绝对路径>/scripts/failtrack.js\" ok", "timeout": 5 }
+        ]
+      }
+    ]
+  }
+}

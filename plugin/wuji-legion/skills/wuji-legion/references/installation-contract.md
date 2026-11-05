@@ -16,8 +16,8 @@
 - `.mcp.json`：项目级 MCP（目前只有 context7，首次使用需用户批准）
 - `plugin/wuji-legion/.claude-plugin/plugin.json`
 - `plugin/wuji-legion/skills/wuji-legion/SKILL.md`
-- `plugin/wuji-legion/skills/wuji-legion/references/`：`multi-source-research.md`、`expert-capability-index.md`、`recipes.md`、`dispatch-and-verify.md`、`context-continuity.md`、`installation-contract.md`
-- `plugin/wuji-legion/agents/`：`wuji-researcher.md`、`wuji-engineer.md`、`wuji-code-reviewer.md`、`wuji-document.md`
+- `plugin/wuji-legion/skills/wuji-legion/references/`：`multi-source-research.md`、`expert-capability-index.md`、`dispatch-and-verify.md`、`context-continuity.md`、`installation-contract.md`、`expert-sources.md`、`rules.md`（与通用版 `CLAUDE.md` 同源，供插件用户使用）
+- `plugin/wuji-legion/agents/`：该目录下实际存在的 `*.md` 专家定义；以实际文件名和 `SKILL.md` 专家名录为准
 
 插件加载后，专家的调用名带前缀：`wuji-legion:wuji-researcher` 等。
 
@@ -31,8 +31,8 @@
 ## 最低验收（部署后回读）
 
 1. `claude plugin validate` 退出码 0。
-2. `plugin.json` 可解析，四个 agent 文件 frontmatter 含 `name`、`description`。
+2. `plugin.json` 可解析，`agents/` 下每个实际 `*.md` 专家文件 frontmatter 含 `name`、`description`；调用名与 `SKILL.md` 专家名录一致。
 3. SKILL.md 的 references 全部存在，相对路径未越界，文件为 UTF-8。
-4. 新会话中 Agent 工具能列出 `wuji-legion:*` 四个专家，并实际调用一次。第 4 项是行为观察，文件存在不能代替它。
+4. 新会话中 Agent 工具能列出 `agents/` 下当前实际定义的 `wuji-legion:*` 专家，并实际调用匹配专家一次。第 4 项是行为观察，文件存在不能代替它。
 
 任何一步失败，保留失败状态，不把待部署写成已安装，不自动重试有副作用的安装动作。

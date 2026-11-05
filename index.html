@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>无极军团 5.0 · Claude 版</title>
-<meta name="description" content="阿极直带 21 个专家子代理 · 缺输入回交 · 失败先绕开 · 验证看产物">
+<meta name="description" content="阿极轻量协调 · 专家冷态按需激活 · 缺输入回交 · 验证看产物">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -142,9 +142,9 @@ footer .accent{color:var(--accent)}
 </nav>
 
 <header class="hero">
-  <div class="badge animate">Claude Code · 5.0 · 21 个专家</div>
+  <div class="badge animate">Claude Code · 无极军团 5.0</div>
   <h1 class="animate animate-d1">无极<span>军团</span></h1>
-  <p class="tagline animate animate-d2">阿极直带专家。一个主 Skill，加 21 个按需调用的专家子代理。</p>
+  <p class="tagline animate animate-d2">阿极负责轻量沟通与协调；专业任务交给按需冷态激活的匹配专家。</p>
   <div class="cta animate animate-d3">
     <a class="primary" href="#install">安装</a>
     <a class="secondary" href="https://github.com/AI-wuji/wuji-dev-claude">GitHub</a>
@@ -172,30 +172,33 @@ footer .accent{color:var(--accent)}
 <section id="experts">
   <div class="section-inner">
     <div class="section-label">专家 / Experts</div>
-    <h2 class="section-title">21 个专家，按需调用</h2>
-    <p class="section-desc">默认冷态，用到才调，做完释放。同一专家可按互不重叠的范围开多个分身并发。</p>
+    <h2 class="section-title">按职责配置的冷态专家</h2>
+    <p class="section-desc">专家按需冷态激活，不需要时不占用会话；只有职责边界明确且有实际消费者时才拆分或新增。专家定义清单不代表能力已通过行为验证。</p>
     <div class="modules">
-      <div class="module-card"><div class="mod-num">工程</div><h3>代码探查</h3><p>只读梳理功能怎么运作：入口、调用链、数据流，结论带行号。</p></div>
-      <div class="module-card"><div class="mod-num">工程</div><h3>软件架构</h3><p>读现有模式，给唯一方案、实现地图和构建顺序。</p></div>
-      <div class="module-card"><div class="mod-num">工程</div><h3>工程实现</h3><p>在限定文件范围内实现、修复、重构。</p></div>
-      <div class="module-card"><div class="mod-num">工程</div><h3>代码审阅</h3><p>只读审阅，找正确性、安全、边界和回归风险。</p></div>
-      <div class="module-card"><div class="mod-num">工程</div><h3>测试验证</h3><p>补测试、固定行为、按验收标准逐条验收。</p></div>
-      <div class="module-card"><div class="mod-num">工程</div><h3>故障诊断</h3><p>只读定位根因，回交证据链和建议修复点。</p></div>
-      <div class="module-card"><div class="mod-num">工程</div><h3>逆向分析</h3><p>对已授权目标做只读静态分析，不运行目标程序。</p></div>
-      <div class="module-card"><div class="mod-num">工程</div><h3>前端视觉</h3><p>在限定范围内实现或改造界面，审查视觉问题。</p></div>
-      <div class="module-card"><div class="mod-num">工程</div><h3>技能打包</h3><p>把流程整理成 Skill 或插件，写触发描述并校验。</p></div>
-      <div class="module-card"><div class="mod-num">工程</div><h3>自动化设计</h3><p>设计并实现本地脚本和小型工作流，定时与常驻交用户批准。</p></div>
-      <div class="module-card"><div class="mod-num">创作</div><h3>ComfyUI 工作流</h3><p>设计调试工作流，写 Python 自定义节点，不擅自下载安装。</p></div>
-      <div class="module-card"><div class="mod-num">创作</div><h3>影视策划</h3><p>剧本、分镜表、美术方案、制作排期，只产出文本。</p></div>
-      <div class="module-card"><div class="mod-num">创作</div><h3>视听制作</h3><p>用本机命令行工具处理音视频，做成片质量检查。</p></div>
-      <div class="module-card"><div class="mod-num">创作</div><h3>内容写作</h3><p>文章、文案、选题、多平台改写，事实带来源。</p></div>
-      <div class="module-card"><div class="mod-num">商务与知识</div><h3>商务与合同</h3><p>方案、报价、合同风险标注。不是法律意见。</p></div>
-      <div class="module-card"><div class="mod-num">商务与知识</div><h3>文档</h3><p>解析、创建、编辑 Word、PDF、表格、演示。</p></div>
-      <div class="module-card"><div class="mod-num">商务与知识</div><h3>数据分析</h3><p>分析数据，结论带样本量和方法。</p></div>
-      <div class="module-card"><div class="mod-num">商务与知识</div><h3>研究</h3><p>在指定来源范围内调研，回交来源、反证和缺口。</p></div>
-      <div class="module-card"><div class="mod-num">商务与知识</div><h3>知识库问答</h3><p>只依据指定资料回答，每条带出处，没有就明说没有。</p></div>
-      <div class="module-card"><div class="mod-num">商务与知识</div><h3>学习与课程</h3><p>学习路径、课程大纲、练习，可当陪练。</p></div>
-      <div class="module-card"><div class="mod-num">商务与知识</div><h3>文件整理</h3><p>先出映射表再整理，绝不删除。</p></div>
+      <div class="module-card"><div class="mod-num">工程</div><h3>代码探查专家</h3><p>只读梳理功能怎么运作：入口、调用链、数据流，结论带行号。<code>wuji-explorer</code></p></div>
+      <div class="module-card"><div class="mod-num">工程</div><h3>软件架构专家</h3><p>读现有模式，给唯一方案、实现地图和构建顺序。<code>wuji-architect</code></p></div>
+      <div class="module-card"><div class="mod-num">工程</div><h3>工程实现专家</h3><p>在限定文件范围内实现、修复、重构。<code>wuji-engineer</code></p></div>
+      <div class="module-card"><div class="mod-num">工程</div><h3>代码审阅专家</h3><p>只读审阅正确性、安全、边界和回归风险；含能力演进评审（消费者、版本、撤销、恢复）。<code>wuji-code-reviewer</code></p></div>
+      <div class="module-card"><div class="mod-num">工程</div><h3>测试验证专家</h3><p>补测试、固定行为、按验收标准逐条验收。<code>wuji-tester</code></p></div>
+      <div class="module-card"><div class="mod-num">工程</div><h3>故障诊断专家</h3><p>只读定位根因，回交证据链和建议修复点。<code>wuji-diagnostician</code></p></div>
+      <div class="module-card"><div class="mod-num">工程</div><h3>逆向分析专家</h3><p>对已授权目标做只读静态分析，不运行目标程序。<code>wuji-reverse</code></p></div>
+      <div class="module-card"><div class="mod-num">工程</div><h3>威胁建模专家</h3><p>对授权系统做只读 STRIDE 建模，不执行攻击或渗透。<code>wuji-threat-modeler</code></p></div>
+      <div class="module-card"><div class="mod-num">工程</div><h3>前端视觉专家</h3><p>在限定范围内实现或改造界面，审查视觉问题。<code>wuji-frontend-visual</code></p></div>
+      <div class="module-card"><div class="mod-num">工程</div><h3>技能打包专家</h3><p>把流程整理成 Skill 或插件，写触发描述并校验。<code>wuji-skill-packager</code></p></div>
+      <div class="module-card"><div class="mod-num">工程</div><h3>自动化设计专家</h3><p>设计并实现本地脚本和小型工作流，定时与常驻交用户批准。<code>wuji-automation</code></p></div>
+      <div class="module-card"><div class="mod-num">创作</div><h3>ComfyUI 工作流专家</h3><p>设计调试工作流，写 Python 自定义节点，不擅自下载安装。<code>wuji-comfyui</code></p></div>
+      <div class="module-card"><div class="mod-num">创作</div><h3>影视策划专家</h3><p>剧本、分镜表、美术方案、制作排期，只产出文本。<code>wuji-film-planner</code></p></div>
+      <div class="module-card"><div class="mod-num">创作</div><h3>视听制作专家</h3><p>用本机命令行工具处理音视频，读回成品规格。<code>wuji-av-producer</code></p></div>
+      <div class="module-card"><div class="mod-num">创作</div><h3>代码动效专家</h3><p>用已有工具制作可编辑程序化动画，先预览再导出。<code>wuji-motion-graphics</code></p></div>
+      <div class="module-card"><div class="mod-num">创作</div><h3>内容写作专家</h3><p>文章、文案、选题、多平台改写，事实带来源，只出草稿。<code>wuji-writer</code></p></div>
+      <div class="module-card"><div class="mod-num">制作</div><h3>媒体质量审查专家</h3><p>独立只读检查媒体规格；多分支交付时锁定版本、核对一致性并写集成清单。<code>wuji-media-reviewer</code></p></div>
+      <div class="module-card"><div class="mod-num">商务与知识</div><h3>商务资料专家</h3><p>客户方案、报价、商务定位与资料；不做合同风险审查。<code>wuji-business</code></p></div>
+      <div class="module-card"><div class="mod-num">商务与知识</div><h3>合同审查专家</h3><p>独立审查条款风险与修改建议，不提供法律意见。<code>wuji-contract-reviewer</code></p></div>
+      <div class="module-card"><div class="mod-num">商务与知识</div><h3>文档处理专家</h3><p>解析、创建、编辑 Word、PDF、表格、演示。<code>wuji-document</code></p></div>
+      <div class="module-card"><div class="mod-num">商务与知识</div><h3>数据分析专家</h3><p>分析数据，结论带样本量和方法。<code>wuji-data-analyst</code></p></div>
+      <div class="module-card"><div class="mod-num">商务与知识</div><h3>调研专家</h3><p>在指定来源范围内调研，回交来源、反证和缺口；本地资料只依据资料作答，没有就说没有。<code>wuji-researcher</code></p></div>
+      <div class="module-card"><div class="mod-num">商务与知识</div><h3>学习课程专家</h3><p>学习路径、课程大纲、练习，可当陪练。<code>wuji-course</code></p></div>
+      <div class="module-card"><div class="mod-num">商务与知识</div><h3>文件整理专家</h3><p>先出映射表再整理，绝不删除。<code>wuji-file-operator</code></p></div>
     </div>
   </div>
 </section>
@@ -210,7 +213,7 @@ footer .accent{color:var(--accent)}
       <div class="phil-card"><div class="phil-icon">🔁</div><h3>失败先绕开</h3><p>换工具、换写法；仍失败查根因；修不了才停。同一方式最多重试两次。</p></div>
       <div class="phil-card"><div class="phil-icon">🔍</div><h3>验证看产物</h3><p>不采信分身自述。作者不验自己。</p></div>
       <div class="phil-card"><div class="phil-icon">🛡️</div><h3>权限边界</h3><p>不付费、不外发私有资料、不删除用户文件、不强杀进程、不写全局配置。</p></div>
-      <div class="phil-card"><div class="phil-icon">⚡</div><h3>最短任务链</h3><p>能直办就直办，只需一个专家就调一个，有独立分支才并发。</p></div>
+      <div class="phil-card"><div class="phil-icon">⚡</div><h3>轻量协调</h3><p>一两步能答完的阿极直接答；需要新的专业判断、写代码、动文件或较大调研才派匹配专家。</p></div>
     </div>
   </div>
 </section>
@@ -219,7 +222,7 @@ footer .accent{color:var(--accent)}
   <div class="section-inner">
     <div class="section-label">状态 / Status</div>
     <h2 class="section-title">做到了什么，没做到什么</h2>
-    <p class="section-desc">21 个专家只验证过"缺输入时回交 BLOCKED"。干活的质量没有系统实测，补进去的方法要点也没有实测效果。</p>
+    <p class="section-desc">当前专家的实际工作质量没有系统实测；定义、执行与验收状态分开记录。</p>
     <p class="section-desc" style="margin-bottom:0">方法要点来自官方和开源项目的读后蒸馏。来源、读到的程度和许可记在仓库的 <code>expert-sources.md</code>。部分方向没找到可靠来源，已在更新日志里列出，没有硬补。</p>
   </div>
 </section>

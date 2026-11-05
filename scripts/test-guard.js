@@ -13,5 +13,11 @@ check('different command unaffected', 'allow', dec('npm run build'))
 run('failtrack.js', { session_id: sid, tool_input: { command: 'npm test' } }, 'ok'); check('after a success', 'allow', dec('npm test'))
 fail1(true); fail1(true); check('interrupts are not counted', 'allow', dec('npm test'))
 try { fs.unlinkSync(path.join(os.tmpdir(), 'wuji-fail-' + sid + '.json')) } catch (e) {}
+const tool = (name, input) => { const o = run('guard.js', { session_id: sid, tool_name: name, tool_input: input }); return o ? JSON.parse(o).hookSpecificOutput.permissionDecision : 'allow' }
+check('Agent wuji-legion:x', 'allow', tool('Agent', { subagent_type: 'wuji-legion:wuji-dev' }))
+check('Agent general-purpose', 'ask', tool('Agent', { subagent_type: 'general-purpose' }))
+check('Agent no subagent_type', 'ask', tool('Agent', {}))
+check('Task Explore', 'ask', tool('Task', { subagent_type: 'Explore' }))
+check('Workflow', 'ask', tool('Workflow', { name: 'x' }))
 console.log(fail ? `failures: ${fail}` : 'all passed')
 process.exit(fail ? 1 : 0)
